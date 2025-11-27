@@ -1,136 +1,137 @@
 # FluxHolographyCAS  
 ### A Computational Backbone for Flux Holography (FH)
 
-This repository contains the full **CAS (Computer Algebra System) verification suite** for  
-**Flux Holography**, together with ready-to-run Jupyter/Colab notebooks.
-
-The CAS modules encode the *exact algebraic structure* of FH:
-- Entropy–Action Law (EAL)  
-- Universal Tick Law (UTL)  
-- Universal Area Law (UAL)  
-- Spacetime response constant \( k_{\mathrm{SEG}} = 4\pi G / c^3 \)  
-- Horizon identities (Schwarzschild, de Sitter, FRW)  
-- Tick sector + Planckian relaxation bound  
-- Integrability / Iyer–Wald selection  
-- FH corollaries (entropic inertia, Hubble quantum, dark-energy ratio, etc.)
-
-Every identity is checked symbolically via SymPy.
+Symbolic CAS suite and backbone notebook verifying the full algebraic structure of  
+Flux Holography: EAL, UTL, UAL, tick sector, horizons, integrability, and corollaries.
 
 ---
 
 # 🚀 Run the FH Backbone Notebook
 
-Click to open directly in Google Colab:
+Open in Google Colab:
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ecabreraigl/FluxHolographyCAS/blob/main/FH_backbone.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/ecabreraigl/FluxHolographyCAS/blob/main/FH_backbone.ipynb
+)
 
-This notebook performs:
+This notebook:
 
-- cloning this repository  
-- importing the CAS suite  
-- running the master consistency check  
-- printing a sector-by-sector summary:
-
-| Sector | Content |
-|-------|---------|
-| **Core Backbone** | EAL, flux law, UTL, UAL, \(k_{\mathrm{SEG}}\), \( \Theta \) |
-| **Horizons & Cosmology** | Schwarzschild, de Sitter, FRW checks |
-| **Tick Sector** | Universal Tick Law, Planckian bound |
-| **Selection / Integrability** | Iyer–Wald invariance, rank-1 closure |
-| **Corollaries** | Bekenstein shift, inertia, Hubble quantum, dark energy |
-
-If the notebook reports  
-**“All identities passed? True”**,  
-the entire FH backbone is internally consistent.
+- clones the repository  
+- imports the FH CAS suite  
+- runs the master CAS checker  
+- prints a sector-by-sector summary  
+- confirms: **All identities passed? True**
 
 ---
 
-# 📂 Repository Structure
+# 📦 Repository Structure
 
+```text
 FluxHolographyCAS/
 │
-├── FH_backbone.ipynb        # Main computational check (run this first)
+├── FH_backbone.ipynb        # Main notebook
 │
-├── cas/                     # CAS suite (Python symbolic modules)
+├── cas/
 │   ├── fh_core_cas.py
 │   ├── fh_horizons_cosmo_cas.py
 │   ├── fh_tick_noneq_cas.py
 │   ├── fh_selection_integrability_iw_cas.py
 │   ├── fh_corollaries_cas.py
 │   ├── fh_complementary_cas.py
-│   ├── fh_master_cas.py     # Orchestrates all checks
-│   └── init.py
+│   ├── fh_master_cas.py
+│   └── __init__.py
 │
 └── README.md
 
-Each CAS module corresponds to a conceptual layer of FH.
+
+⸻
+
+📘 What This Repository Verifies
+
+1. FH Backbone (CAS 1)
+	•	Entropy–Action Law:
+$$ \Delta S = \frac{\pi k_B}{\hbar} , \Delta X $$
+	•	Universal Area Law:
+$$ \frac{A}{S} = \frac{4\ell_P^2}{k_B} $$
+	•	Spacetime response:
+$$ k_{\mathrm{SEG}} = \frac{4\pi G}{c^3} $$
+	•	Tick constant:
+$$ \Theta = \frac{\hbar}{\pi k_B} $$
+
+⸻
+
+2. Horizons and Cosmology (CAS 2)
+	•	Flux identity:
+$$ X = \frac{A}{k_{\mathrm{SEG}}} $$
+	•	Bekenstein–Hawking entropy:
+$$ S_{\mathrm{BH}} = \frac{k_B A}{4\ell_P^2} $$
+	•	de Sitter horizon relations
+	•	FRW critical density:
+$$ \rho_{\mathrm{eff}} = \frac{3H^2 c^2}{8\pi G} $$
+
+⸻
+
+3. Tick Sector (CAS 3)
+	•	Universal Tick Law:
+$$ T t^* = \Theta $$
+	•	Tick–temperature relation:
+$$ t^*(T) = \frac{\hbar}{\pi k_B T} $$
+	•	Planckian relaxation bound:
+$$ \tau_{\min} = \frac{\hbar}{4\pi^2 k_B T} = \frac{t^*}{4\pi}. $$
+
+⸻
+
+4. Selection & Integrability (CAS 4)
+	•	Iyer–Wald invariance
+	•	Integrability of the horizon 1-form
+	•	Einstein–Hilbert uniquely selected via EAL consistency
+
+⸻
+
+5. FH Corollaries (CAS 5)
+	•	Bekenstein shift
+	•	Entropic inertia
+	•	Hubble horizon quantum
+	•	Dark-energy ratio
+	•	Structural mass scales
+	•	Tick-count (N = S / (\pi k_B))
+
+These are derived, not postulated.
+
+⸻
+
+🛠 Requirements
+
+Running in Colab: no installation needed.
+Local installation:
+
+pip install sympy
+
+Python ≥ 3.8 recommended.
+
+⸻
+
+📣 Contributions
+
+Suggestions, pull requests, and issues are welcome.
+
+⸻
+
+© Author
+
+Enzo Cabrera Iglesias (2025)
+Constants-explicit thermodynamic formulation of GR.
 
 ---
 
-# 🧠 What This Repository Provides
+# ✔️ What to do now
 
-### ✔ A **transparent, constants-explicit** implementation of the FH backbone  
-No hidden normalization choices, no missing factors of \(2\pi\), no geometric ambiguities.
+1. Go to your repo → open `README.md`
+2. Replace it entirely with the block above
+3. Commit + refresh
 
-### ✔ A **symbolic verification pipeline**  
-Anyone (or any LLM) can run the checks and confirm:
+Then tell me:
 
-\[
-S = \frac{\pi k_B}{\hbar} X, 
-\quad
-A = k_{\mathrm{SEG}} X,
-\quad
-T t^\* = \Theta,
-\quad
-\Theta = \frac{\hbar}{\pi k_B}.
-\]
+➡️ **“Check my README again.”**
 
-### ✔ Horizon mechanics checks  
-\[
-X = \frac{A}{k_{\mathrm{SEG}}}, \qquad
-S_{\mathrm{BH}} = \frac{k_B A}{4 \ell_P^2}.
-\]
-
-### ✔ Tick-sector checks  
-\[
-t^\*(T)=\frac{\hbar}{\pi k_B T}, \qquad
-\tau_{\min} = \frac{t^\*}{4\pi}.
-\]
-
-### ✔ Selection & Iyer–Wald integrability  
-Shows why FH selects Einstein–Hilbert uniquely.
-
-### ✔ FH Corollaries  
-Derived (not postulated) mass scales, dark-energy ratio, inertia identity, etc.
-
----
-
-# 🔧 Requirements
-
-You do **not** need to install anything if running in Colab.
-
-Locally:
-
-Python ≥ 3.8 is recommended.
-
----
-
-# 📘 Coming Soon
-
-- `FH_corollaries.ipynb` — numerical evaluations of FH predictions  
-- `FH_playground.ipynb` — interactive calculator (ticks, BH parameters, de Sitter, etc.)
-
----
-
-# 📣 Contributions
-
-Physicists, students, and AI researchers are welcome to suggest improvements or request additional notebooks.
-
----
-
-# © Author
-
-**Enzo Cabrera Iglesias** (2025)  
-Flux Holography — a constants-explicit thermodynamic formulation of GR.
-
-
+I will verify that equations render properly and the structure block looks clean.
