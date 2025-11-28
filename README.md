@@ -48,65 +48,85 @@ FluxHolographyCAS/
 ## **1. FH Backbone (CAS 1)**
 
 - **Entropy–Action Law**  
-  $$
-  \Delta S = \frac{\pi k_B}{\hbar}\,\Delta X
-  $$
+
+$$
+\Delta S = \frac{\pi k_B}{\hbar}\,\Delta X
+$$
 
 - **Universal Area Law**  
-  $$
-  \frac{A}{S} = \frac{4\ell_P^2}{k_B}
-  $$
+
+$$
+\frac{A}{S} = \frac{4\ell_P^2}{k_B}
+$$
 
 - **Spacetime response constant**  
-  $$
-  k_{\mathrm{SEG}} = \frac{4\pi G}{c^3}
-  $$
+
+$$
+k_{\mathrm{SEG}} = \frac{4\pi G}{c^3}
+$$
 
 - **Tick constant**  
-  $$
-  \Theta = \frac{\hbar}{\pi k_B}
-  $$
+
+$$
+\Theta = \frac{\hbar}{\pi k_B}
+$$
 
 ---
 
 ## **2. Horizons and Cosmology (CAS 2)**
 
 - **Flux identity**  
-  $$
-  X = \frac{A}{k_{\mathrm{SEG}}}
-  $$
+
+$$
+X = \frac{A}{k_{\mathrm{SEG}}}
+$$
 
 - **Bekenstein–Hawking entropy**  
-  $$
-  S_{\mathrm{BH}} = \frac{k_B A}{4\ell_P^2}
-  $$
+
+$$
+S_{\mathrm{BH}} = \frac{k_B A}{4\ell_P^2}
+$$
 
 - **de Sitter horizon relations**
 
+$$
+R_{\mathrm{dS}} = \frac{c}{H}, \qquad
+  A_{\mathrm{dS}} = 4\pi \frac{c^2}{H^2}
+$$
+
+$$
+  S_{\mathrm{dS}} = \frac{k_B A_{\mathrm{dS}}}{4\ell_P^2}, \qquad
+  \Lambda = \frac{3H^2}{c^2}
+$$
+
 - **FRW effective density**  
-  $$
-  \rho_{\mathrm{eff}} = \frac{3H^2 c^2}{8\pi G}
-  $$
+
+$$
+\rho_{\mathrm{eff}} = \frac{3H^2 c^2}{8\pi G}
+$$
 
 ---
 
 ## **3. Tick Sector (CAS 3)**
 
 - **Universal Tick Law**  
-  $$
-  T\, t^* = \Theta
-  $$
+
+$$
+T\, t^* = \Theta
+$$
 
 - **Tick–temperature relation**  
-  $$
-  t^*(T) = \frac{\hbar}{\pi k_B T}
-  $$
+
+$$
+t^*(T) = \frac{\hbar}{\pi k_B T}
+$$
 
 - **Planckian relaxation bound**  
-  $$
-  \tau_{\min} = \frac{\hbar}{4\pi^2 k_B T}
+
+$$
+\tau_{\min} = \frac{\hbar}{4\pi^2 k_B T}
   = \frac{t^*}{4\pi}
-  $$
+$$
 
 ---
 
@@ -126,6 +146,7 @@ FluxHolographyCAS/
 - Dark-energy ratio  
 - Structural mass scales  
 - Tick count  
+
   $$
   N = \frac{S}{\pi k_B}
   $$
