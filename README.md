@@ -42,7 +42,6 @@ FluxHolographyCAS/
 │
 └── README.md
 
----
 
 # 📘 What This Repository Verifies
 
