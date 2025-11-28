@@ -22,7 +22,6 @@ This notebook:
 - prints a sector-by-sector summary  
 - confirms: **All identities passed? True**
 
----
 
 # 📦 Repository Structure
 
@@ -43,8 +42,7 @@ FluxHolographyCAS/
 │
 └── README.md
 
-
-⸻
+---
 
 # 📘 What This Repository Verifies
 
