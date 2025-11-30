@@ -23,14 +23,37 @@ This notebook:
 - confirms: **All identities passed? True**
 
 
+# 📦 Installation
+
+### Quick Start (2 minutes)
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/ecabreraigl/FluxHolographyCAS.git
+cd FluxHolographyCAS
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Verify it works
+python cas/fh_master_cas.py
+```
+
+**You should see:** `Global all_pass: True` ✓
+
+**Alternative installation methods:**
+- See [QUICKSTART.md](QUICKSTART.md) for step-by-step guide
+- See [INSTALL.md](INSTALL.md) for detailed installation options
+- Or use conda: `conda env create -f environment.yml`
+
 # 📦 Repository Structure
 
 ```text
 FluxHolographyCAS/
 │
-├── FH_backbone.ipynb        # Main notebook
+├── FH_backbone.ipynb        # Main verification notebook
 │
-├── cas/
+├── cas/                     # Core CAS modules
 │   ├── fh_core_cas.py
 │   ├── fh_horizons_cosmo_cas.py
 │   ├── fh_tick_noneq_cas.py
@@ -40,6 +63,19 @@ FluxHolographyCAS/
 │   ├── fh_master_cas.py
 │   └── __init__.py
 │
+├── examples/                # Usage examples
+│   ├── predictions/         # Testing new predictions
+│   │   ├── README.md       # Methodology guide
+│   │   └── test_new_prediction.py
+│   └── observations/        # Comparing with data
+│       ├── README.md       # Methodology guide
+│       └── compare_with_observations.py
+│
+├── pyproject.toml          # Modern Python package configuration
+├── requirements.txt        # Core dependencies
+├── requirements-dev.txt    # Development dependencies
+├── environment.yml         # Conda environment
+├── INSTALL.md             # Detailed installation guide
 └── README.md
 ```
 
@@ -154,3 +190,147 @@ $$
 These are **derived**, not postulated.
 
 ---
+
+# 🧪 Usage & Examples
+
+## Running the Master CAS
+
+```bash
+# Run the full verification suite
+python cas/fh_master_cas.py
+
+# Or use the installed command
+fh-cas
+
+# Output as JSON
+fh-cas --json
+```
+
+## Testing New Predictions
+
+Want to derive and test a new prediction from FH?
+
+```bash
+cd examples/predictions
+
+# Read the methodology guide
+cat README.md
+
+# Run the example
+python test_new_prediction.py
+```
+
+See [examples/predictions/README.md](examples/predictions/README.md) for detailed methodology.
+
+## Comparing with Observations
+
+Want to test FH predictions against real data?
+
+```bash
+cd examples/observations
+
+# Read the methodology guide
+cat README.md
+
+# Run the comparison with real observations
+python compare_with_observations.py
+```
+
+See [examples/observations/README.md](examples/observations/README.md) for detailed methodology.
+
+## Using as a Python Library
+
+```python
+# Import FH CAS modules
+from cas import fh_core_cas, fh_master_cas
+
+# Run verification
+summary = fh_master_cas.run_all_checks()
+print(f"All checks passed: {summary['all_pass']}")
+
+# Use specific predictions
+import sympy as sp
+from cas.fh_core_cas import (
+    bekenstein_hawking_entropy,
+    schwarzschild_area,
+    hawking_temperature
+)
+
+# Example: Black hole entropy
+M = 1e30  # Mass in kg
+A = schwarzschild_area(M)
+S = bekenstein_hawking_entropy(A)
+print(f"Entropy: {S}")
+```
+
+---
+
+# 📚 Documentation
+
+- **Installation**: See [INSTALL.md](INSTALL.md)
+- **Testing Predictions**: See [examples/predictions/README.md](examples/predictions/README.md)
+- **Comparing with Data**: See [examples/observations/README.md](examples/observations/README.md)
+- **FH Papers**: See paper registry in `cas/fh_master_cas.py`
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome! Whether you:
+
+- Find a bug in the CAS verification
+- Want to add new FH predictions
+- Have observational data to compare
+- Improve documentation
+
+Please feel free to open an issue or pull request.
+
+**For developers:**
+```bash
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Run tests (when available)
+pytest
+
+# Format code
+black cas/ examples/
+
+# Check code style
+flake8 cas/
+```
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License - see LICENSE file for details.
+
+---
+
+# 📖 Citation
+
+If you use this CAS in your research, please cite the relevant FH papers:
+
+```bibtex
+@article{FH-Backbone,
+  title={Flux Holography: Computational Verification of the FH Backbone},
+  author={Cabrera Iglesias, Enzo},
+  year={2024},
+  journal={GitHub Repository},
+  url={https://github.com/ecabreraigl/FluxHolographyCAS}
+}
+```
+
+See individual papers in `cas/fh_master_cas.py` for specific citations.
+
+---
+
+# ❓ Questions?
+
+- **Issues**: https://github.com/ecabreraigl/FluxHolographyCAS/issues
+- **Discussions**: https://github.com/ecabreraigl/FluxHolographyCAS/discussions
+
+---
+
+**Built with ❤️ for the physics community**
